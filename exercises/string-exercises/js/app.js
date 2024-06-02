@@ -1,3 +1,6 @@
+// Import the StringFunctions class
+const StringFunctions = require('./StringFunctions');
+
 const inputText = document.querySelector('#text');
 const reverseParagraph = document.querySelector('#reverse');
 const capitalizeParagraph = document.querySelector('#capitalize');
