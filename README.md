@@ -6,16 +6,17 @@ JS and DOM Exercise
 Instructions to this assignment can be found [here](https://reedws.github.io/IT3049C/coursework/labs/js-and-dom-exercises/).
 
 ## Checklist:
-- [ ] update the assignment checks above to the correct link
-- [ ] All Unit tests passed.
-- [ ] filled out the self-evaluation.
-- [ ] filled out the self-reflection.
+- [X] update the assignment checks above to the correct link
+- [X] All Unit tests passed.
+- [X] filled out the self-evaluation.
+- [X] filled out the self-reflection.
 
 ## Self-Evaluation: 
 (You may base this on the number of exercises you were able to complete)
 how many points out of 20 do you deserve on this assignment:
-
+20
 ## Self-Reflection:
 <!-- What did you learn that you found interesting -->
-
+I found it interesting on how it emphasizes testing and automation.
 ### How long it took you to finish this?
+45 minutes
