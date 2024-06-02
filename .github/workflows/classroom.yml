@@ -1,0 +1,38 @@
+name: Autograding Tests
+'on':
+- workflow_dispatch
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Unit Tests
+      id: unit-tests
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Unit Tests
+        setup-command: npm install
+        command: npm run test:unit
+        timeout: 10
+    - name: Integration Tests
+      id: integration-tests
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Integration Tests
+        setup-command: npm install
+        command: npm run test:integration
+        timeout: 10
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        UNIT-TESTS_RESULTS: "${{steps.unit-tests.outputs.result}}"
+        INTEGRATION-TESTS_RESULTS: "${{steps.integration-tests.outputs.result}}"
+      with:
+        runners: unit-tests,integration-tests
